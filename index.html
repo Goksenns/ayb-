@@ -84,20 +84,34 @@
             color:aliceblue;
         }
 
-        footer{
+        .footer{
             background: url("https://benimkampusum.com/images/UniversiteResim/162cf21a505dc0.jpg");
             background-size: cover;
             background-position: center;
-            position: absolute;
-            opacity: 0.7;
-            width: 100%;
-            height:45%;
+            position: relative;
+            height:60vh;
             
         }
+        .footer::before{
+            content: '';
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:rgba(0,0,0,0.6) ;
+        }
+
+        .footer *{
+            position: relative;
+            z-index:5;
+        }
+
         .footer-logo{
             height: 18vh;
             width: 10vw;
             margin-left: 45%;
+            margin-top:1.5rem;
         }
         .footer-list{
             color:aliceblue;
@@ -109,6 +123,7 @@
             padding-bottom: 0.5rem;
             font-weight: lighter;
             font-size: x-large;
+
         }
         .footer-list li{
             font-weight: lighter;
@@ -118,8 +133,8 @@
             color:#13c0d7;
         }
         .copy{
-            margin-left:40%;
-            margin-top: 2rem;
+            margin-left:43%;
+            margin-top: 6rem;
         }
     </style>
 </head>
@@ -163,7 +178,7 @@
 
     </div>
 
-    <footer>
+    <footer class="footer">
         <div>
         <img class="footer-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Ankara_Y%C4%B1ld%C4%B1r%C4%B1m_Beyaz%C4%B1t_University_logo.svg/800px-Ankara_Y%C4%B1ld%C4%B1r%C4%B1m_Beyaz%C4%B1t_University_logo.svg.png" alt="">
     </div>
