@@ -1,187 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-        integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Document</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-        body {
-            height: 100vh;
-        }
+      body {
+        height: 100vh;
+      }
 
-        .navbar {
-            display: flex;
-            flex-direction: column;
-            top: 0;
-            width: 100%;
-            height: 70px;
-            padding: 0;
-        }
+      .navbar {
+        display: flex;
+        flex-direction: column;
+        top: 0;
+        width: 100%;
+        height: 70px;
+        padding: 0;
+      }
 
+      .nav-links {
+        display: flex;
+        justify-content: flex-end;
+        background-color: #13c0d7;
+        height: 5vh;
+        width: 100%;
+        padding-bottom: 4px;
+      }
 
-        .nav-links {
-            display: flex;
-            justify-content: flex-end;
-            background-color: #13c0d7;
-            height: 5vh;
-            width: 100%;
-            padding-bottom: 4px;
+      .nav-link {
+        font-size: x-small;
+        color: aliceblue;
+        padding: 3px;
+      }
+      .nav-link:hover {
+        color: #002d72;
+      }
 
-        }
+      .nav-text {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        color: #002d72;
+        padding-top: 1rem;
+        border-bottom: 3px solid #13c0d7;
+      }
 
-        .nav-link {
-            font-size: x-small;
-            color: aliceblue;
-            padding: 3px;
-        }
-        .nav-link:hover{
-            color:#002d72;
-        }
+      .logo {
+        height: 100px;
+        margin-top: -30px;
+      }
 
-        .nav-text {
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            color: #002d72;
-            padding-top: 1rem;
-            border-bottom: 3px solid #13c0d7;
-        }
+      .input {
+        margin: 20%;
+        text-align: center;
+      }
 
-        .logo {
-            height: 100px;
-            margin-top: -30px;
-        }
+      input[type="file"] {
+        display: none;
+      }
 
-        .input {
-            margin: 20%;
-            text-align: center;
-        }
+      .custom-file-upload {
+        border: 1px solid #ccc;
+        display: inline-block;
+        padding: 6px 12px;
+        cursor: pointer;
+        border-radius: 3px;
+      }
+      .custom-file-upload:hover {
+        background-color: #13c0d7;
+        color: aliceblue;
+      }
 
-        input[type="file"] {
-            display: none;
-        }
+      footer {
+        background: url("https://benimkampusum.com/images/UniversiteResim/162cf21a505dc0.jpg");
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        opacity: 0.7;
+        width: 100%;
+        height: 45%;
+      }
+      .footer-logo {
+        height: 18vh;
+        width: 10vw;
+        margin-left: 45%;
+      }
+      .footer-list {
+        color: aliceblue;
+        margin-left: 4rem;
+        margin-top: 4rem;
+      }
 
-        .custom-file-upload {
-            border: 1px solid #ccc;
-            display: inline-block;
-            padding: 6px 12px;
-            cursor: pointer;
-            border-radius: 3px;
-
-        }
-        .custom-file-upload:hover {
-            background-color: #13c0d7;
-            color:aliceblue;
-        }
-
-        footer{
-            background: url("https://benimkampusum.com/images/UniversiteResim/162cf21a505dc0.jpg");
-            background-size: cover;
-            background-position: center;
-            position: absolute;
-            opacity: 0.7;
-            width: 100%;
-            height:45%;
-            
-        }
-        .footer-logo{
-            height: 18vh;
-            width: 10vw;
-            margin-left: 45%;
-        }
-        .footer-list{
-            color:aliceblue;
-            margin-left: 4rem;
-            margin-top: 4rem;
-        }
-
-        .footer-list h3{
-            padding-bottom: 0.5rem;
-            font-weight: lighter;
-            font-size: x-large;
-        }
-        .footer-list li{
-            font-weight: lighter;
-            font-size:medium;
-        }
-        .footer-list li:hover{
-            color:#13c0d7;
-        }
-        .copy{
-            margin-left:40%;
-            margin-top: 2rem;
-        }
+      .footer-list h3 {
+        padding-bottom: 0.5rem;
+        font-weight: lighter;
+        font-size: x-large;
+      }
+      .footer-list li {
+        font-weight: lighter;
+        font-size: medium;
+      }
+      .footer-list li:hover {
+        color: #13c0d7;
+      }
+      .copy {
+        margin-left: 40%;
+        margin-top: 2rem;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body onload="routeToCourses()">
     <nav class="navbar">
-        <div class="nav-links">
-            <a href="" class="nav-link ">
-                <i class="fab fa-facebook fa-2x"></i>
-            </a>
-            <a href="" class="nav-link ">
-                <i class="fab fa-twitter fa-2x"></i>
-            </a>
-            <a href="" class="nav-link ">
-                <i class="fab fa-youtube fa-2x"></i>
-            </a>
-            <a href="" class="nav-link ">
-                <i class="fab fa-linkedin fa-2x" style="padding-right: 5px" ;></i>
-            </a>
-            <p style="color:white; padding-top:2px;">|</p>
-            <a class="fs-6 nav-link" href="#" style="font-size: medium; text-decoration:none;">Tr</a>
-            <a class=" fs-6 nav-link " style="font-size: medium; text-decoration: none;" href="#">Eng</a>
-
+      <div class="nav-links">
+        <a href="" class="nav-link">
+          <i class="fab fa-facebook fa-2x"></i>
+        </a>
+        <a href="" class="nav-link">
+          <i class="fab fa-twitter fa-2x"></i>
+        </a>
+        <a href="" class="nav-link">
+          <i class="fab fa-youtube fa-2x"></i>
+        </a>
+        <a href="" class="nav-link">
+          <i class="fab fa-linkedin fa-2x" style="padding-right: 5px" ;></i>
+        </a>
+        <p style="color: white; padding-top: 2px">|</p>
+        <a class="fs-6 nav-link" href="#" style="font-size: medium; text-decoration: none">Tr</a>
+        <a class="fs-6 nav-link" style="font-size: medium; text-decoration: none" href="#">Eng</a>
+      </div>
+      <div class="nav-text">
+        <div>
+          <img class="logo" src="https://aybu.edu.tr/images/aybu_logo.png" alt="" />
         </div>
-        <div class="nav-text">
-            <div>
-                <img class="logo" src="https://aybu.edu.tr/images/aybu_logo.png" alt="">
-            </div>
-            <div>
-                <h2 style="font-weight: lighter ; padding-top: 7px;">Müdendislik ve Doğa Bilimleri Fakültesi</h2>
-                <h3 style="font-weight: lighter ;">Bilgisayar Mühendisliği </h3>
-            </div>
+        <div>
+          <h2 style="font-weight: lighter; padding-top: 7px">Müdendislik ve Doğa Bilimleri Fakültesi</h2>
+          <h3 style="font-weight: lighter">Bilgisayar Mühendisliği</h3>
         </div>
+      </div>
     </nav>
 
     <div class="input">
-        <label for="file-upload" class="custom-file-upload">
-            Custom Upload
-        </label>
-        <input id="file-upload" type="file" />
-
+      <label for="file-upload" class="custom-file-upload"> Custom Upload </label>
+      <input id="file-upload" type="file" />
     </div>
 
     <footer>
-        <div>
-        <img class="footer-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Ankara_Y%C4%B1ld%C4%B1r%C4%B1m_Beyaz%C4%B1t_University_logo.svg/800px-Ankara_Y%C4%B1ld%C4%B1r%C4%B1m_Beyaz%C4%B1t_University_logo.svg.png" alt="">
-    </div>
-    <div class="footer-list">
+      <div>
+        <img
+          class="footer-logo"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Ankara_Y%C4%B1ld%C4%B1r%C4%B1m_Beyaz%C4%B1t_University_logo.svg/800px-Ankara_Y%C4%B1ld%C4%B1r%C4%B1m_Beyaz%C4%B1t_University_logo.svg.png"
+          alt=""
+        />
+      </div>
+      <div class="footer-list">
         <h3>HIZLI ERİŞİM</h3>
         <ul>
-            <li>Bologna</li>
-            <li>Kütüphane</li>
+          <li>Bologna</li>
+          <li>Kütüphane</li>
         </ul>
         <div class="copy">
-            <p>2020 &copy AYBU BIDB</p>
+          <p>2020 &copy AYBU BIDB</p>
         </div>
-    </div>
-
+      </div>
     </footer>
 
-
-
-</body>
-
+    <script src="index.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"
+      integrity="sha512-dfX5uYVXzyU8+KHqj8bjo7UkOdg18PaOtpa48djpNbZHwExddghZ+ZmzWT06R5v6NSk3ZUfsH6FNEDepLx9hPQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
 </html>
