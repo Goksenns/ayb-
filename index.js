@@ -6,22 +6,15 @@ function getUploadedItems() {
     "uploaded-busy": false,
   };
   if (getServices()) localStorageArr["uploaded-service"] = true;
-  if (getClassrooms()) localStorageArr["uploaded-course"] = true;
-  if (getBusyDays()) localStorageArr["uploaded-classroom"] = true;
-  if (getCourses()) localStorageArr["uploaded-busy"] = true;
+  if (getCourses()) localStorageArr["uploaded-course"] = true;
+  if (getClassrooms()) localStorageArr["uploaded-classroom"] = true;
+  if (getBusyDays()) localStorageArr["uploaded-busy"] = true;
   for (const item of Object.keys(localStorageArr)) {
-    console.log(item);
-
+    const i = document.getElementById(item);
     if (localStorageArr[item]) {
-      const _item = document.getElementById(item);
-      const i = document.createElement("i");
       i.className = "far fa-check-circle green";
-      _item.appendChild(i);
     } else {
-      const _item = document.getElementById(item);
-      const i = document.createElement("i");
       i.className = "far fa-times-circle red";
-      _item.appendChild(i);
     }
   }
 }
