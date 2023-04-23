@@ -1,4 +1,32 @@
-async function readSingleFile(event) {
+function getUploadedItems() {
+  const localStorageArr = {
+    "uploaded-service": false,
+    "uploaded-course": false,
+    "uploaded-classroom": false,
+    "uploaded-busy": false,
+  };
+  if (getServices()) localStorageArr["uploaded-service"] = true;
+  if (getClassrooms()) localStorageArr["uploaded-course"] = true;
+  if (getBusyDays()) localStorageArr["uploaded-classroom"] = true;
+  if (getCourses()) localStorageArr["uploaded-busy"] = true;
+  for (const item of Object.keys(localStorageArr)) {
+    console.log(item);
+
+    if (localStorageArr[item]) {
+      const _item = document.getElementById(item);
+      const i = document.createElement("i");
+      i.className = "far fa-check-circle green";
+      _item.appendChild(i);
+    } else {
+      const _item = document.getElementById(item);
+      const i = document.createElement("i");
+      i.className = "far fa-times-circle red";
+      _item.appendChild(i);
+    }
+  }
+}
+
+function readSingleFile(event) {
   //Retrieve the first (and only!) File from the FileList object
   const file = event.target.files[0];
   switch (file.name.toLowerCase()) {
@@ -18,6 +46,7 @@ async function readSingleFile(event) {
           }
           localStorage.setItem("services", JSON.stringify(services));
           routeToCourses();
+          getUploadedItems();
         },
       });
       break;
@@ -42,6 +71,7 @@ async function readSingleFile(event) {
           }
           localStorage.setItem("courses", JSON.stringify(courses));
           routeToCourses();
+          getUploadedItems();
         },
       });
 
@@ -62,6 +92,7 @@ async function readSingleFile(event) {
           }
           localStorage.setItem("classrooms", JSON.stringify(classrooms));
           routeToCourses();
+          getUploadedItems();
         },
       });
       break;
@@ -81,6 +112,7 @@ async function readSingleFile(event) {
           }
           localStorage.setItem("busyDays", JSON.stringify(busyDays));
           routeToCourses();
+          getUploadedItems();
         },
       });
       break;
@@ -110,6 +142,7 @@ function getClassrooms() {
 }
 
 function routeToCourses() {
+  getUploadedItems();
   if (getServices() && getCourses() && getBusyDays() && getClassrooms()) {
     location.href = "/courses.html";
   }
