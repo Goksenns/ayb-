@@ -97,8 +97,8 @@ function getOrderedLessons() {
         console.log(timeSelector);
         if (course) {
           html += `
-            <td id="${course.courseCode}">
-              ${course.courseCode}
+            <td>
+              <button class="non-bordered" id="${course.courseCode}">${course.courseCode}</button>
             </td>
           `;
         } else {
@@ -114,3 +114,7 @@ function getOrderedLessons() {
 function getCourse(courseCode) {
   return courses.filter((_course) => courseCode === _course.courseCode);
 }
+
+window.addEventListener("click", (event) => {
+  console.log(getCourse(event.target.id)[0]);
+});
