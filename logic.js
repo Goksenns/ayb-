@@ -97,7 +97,7 @@ function getOrderedLessons() {
         console.log(timeSelector);
         if (course) {
           html += `
-            <td>
+            <td id="${course.courseCode}">
               ${course.courseCode}
             </td>
           `;
@@ -109,4 +109,8 @@ function getOrderedLessons() {
       });
     }
   }
+}
+
+function getCourse(courseCode) {
+  return courses.filter((_course) => courseCode === _course.courseCode);
 }

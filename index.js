@@ -147,6 +147,7 @@ function routeToHomepage() {
   } else {
     setServiceLessons();
     courses.forEach((course) => setCourses(course));
+    getOrderedLessons();
   }
 }
 
