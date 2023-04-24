@@ -84,3 +84,29 @@ const checkInstructor = (course, day, dayTime) => {
   });
   return isBusyDayTime;
 };
+
+// SHOW LESSONS
+let timeSelector;
+function getOrderedLessons() {
+  for (let i = 0; i < daysArr.length; i++) {
+    for (let j = 0; j < dayTimeArr.length; j++) {
+      timeSelector = `${daysArr[i].toLowerCase()}-${dayTimeArr[j].toLowerCase()}`;
+      classrooms.forEach((classroom) => {
+        const course = ALL_DAYS[daysArr[i]][dayTimeArr[j]][classroom.classId];
+        let html = ``;
+        console.log(timeSelector);
+        if (course) {
+          html += `
+            <td>
+              ${course.courseCode}
+            </td>
+          `;
+        } else {
+          html += `
+          <td></td>`;
+        }
+        document.getElementById(timeSelector).innerHTML += html;
+      });
+    }
+  }
+}
