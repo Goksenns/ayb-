@@ -116,5 +116,60 @@ function getCourse(courseCode) {
 }
 
 window.addEventListener("click", (event) => {
-  console.log(getCourse(event.target.id)[0]);
+  const course = getCourse(event.target.id)[0];
+  if (course) {
+    modal.classList.add("card-table");
+    console.log(course);
+    const table = document.getElementById("clicked-table");
+    const html = `
+      <button id="close-button" onclick="closeModal()">X</button>
+      <tr>
+        <th>Classroom</th>
+        <td>${course.class}</td>
+      </tr>
+      <tr>
+        <th>Course Code</th>
+        <td>${course.courseCode}</td>
+      </tr>
+      <tr>
+        <th>Course Name</th>
+        <td>${course.courseName}</td>
+      </tr>
+      <tr>
+        <th>Credit</th>
+        <td>${course.credit}</td>
+      </tr>
+      <tr>
+        <th>Day</th>
+        <td>${course.day}</td>
+      </tr>
+      <tr>
+        <th>Day Time</th>
+        <td>${course.dayTime}</td>
+      </tr>
+      <tr>
+        <th>Department Or Service</th>
+        <td>${course.departmentOrService === "D" ? "Department" : "Service"}</td>
+      </tr>
+      <tr>
+        <th>Instructor Name</th>
+        <td>${course.instructorName}</td>
+      </tr>
+      <tr>
+        <th>Students Count</th>
+        <td>${course.studentsNumber}</td>
+      </tr>
+      <tr>
+        <th>Year</th>
+        <td>${course.year}</td>
+      </tr>
+    `;
+    table.innerHTML = html;
+  }
 });
+
+function closeModal() {
+  const modal = document.getElementById("modal");
+  modal.classList.remove("card-table");
+  modal.classList.add("card-table-none");
+}
