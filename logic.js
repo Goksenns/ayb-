@@ -112,11 +112,11 @@ function getOrderedLessons() {
 }
 
 function getCourse(courseCode) {
-  return courses.filter((_course) => courseCode === _course.courseCode);
+  return courses.find((_course) => courseCode === _course.courseCode);
 }
 
 window.addEventListener("click", (event) => {
-  const course = getCourse(event.target.id)[0];
+  const course = getCourse(event.target.id);
   if (course) {
     modal.classList.add("card-table");
     console.log(course);
