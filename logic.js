@@ -118,6 +118,7 @@ function getCourse(courseCode) {
 window.addEventListener("click", (event) => {
   const course = getCourse(event.target.id);
   if (course) {
+    const modal = document.getElementById("modal");
     modal.classList.add("card-table");
     console.log(course);
     const table = document.getElementById("clicked-table");
@@ -171,5 +172,5 @@ window.addEventListener("click", (event) => {
 function closeModal() {
   const modal = document.getElementById("modal");
   modal.classList.remove("card-table");
-  modal.classList.add("card-table-none");
+  modal.setAttribute("display", "none");
 }
