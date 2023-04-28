@@ -21,6 +21,10 @@ const setServiceLessons = () => {
     serviceCourse.dayTime = service.dayTime;
     const selectedClass = selectClassroom(serviceCourse, service.day, service.dayTime);
     if (!selectedClass) {
+      dropLoadedFiles();
+      alert(
+        "There is no way to make a schedule for the department. We are dropping your loaded files, so you can upload with more classes."
+      );
       throw new Error("There is no way to make a schedule for the department.");
     }
     serviceCourse.class = selectedClass.classId;
@@ -111,6 +115,14 @@ function getOrderedLessons() {
   }
 }
 
+function dropLoadedFiles() {
+  localStorage.removeItem("classrooms");
+  localStorage.removeItem("services");
+  localStorage.removeItem("busyDays");
+  localStorage.removeItem("courses");
+  location.href = "/";
+}
+
 function getCourse(courseCode) {
   return courses.find((_course) => courseCode === _course.courseCode);
 }
@@ -118,6 +130,9 @@ function getCourse(courseCode) {
 window.addEventListener("click", (event) => {
   const course = getCourse(event.target.id);
   if (course) {
+    const modal = document.getElementById("modal");
+    modal.setAttribute("display", "fixed");
+    modal.classList.remove("card-table-none");
     modal.classList.add("card-table");
     console.log(course);
     const table = document.getElementById("clicked-table");
@@ -170,6 +185,5 @@ window.addEventListener("click", (event) => {
 
 function closeModal() {
   const modal = document.getElementById("modal");
-  modal.classList.remove("card-table");
   modal.classList.add("card-table-none");
 }
