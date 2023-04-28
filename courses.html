@@ -163,10 +163,6 @@
         z-index: 30;
       }
 
-      .card-table-none {
-        display: none;
-      }
-
       .card {
         background: linear-gradient(rgb(19, 192, 215), rgb(67, 112, 180));
         width: 70%;
@@ -174,7 +170,11 @@
         box-shadow: 2px 1px 3px 3px rgba(0, 45, 114);
       }
 
-      @media (max-width: 1324px) {
+      .card-table-none {
+        display: none;
+      }
+
+      @media (max-width: 750) {
         .card-table {
           display: flex;
           top: 5%;

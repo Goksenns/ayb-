@@ -29,6 +29,9 @@ function readSingleFile(event) {
         complete: (results) => {
           const services = [];
           for (const result of results.data) {
+            if (result[0] === "") {
+              continue;
+            }
             services.push(
               new Object({
                 courseCode: result[0],
@@ -49,6 +52,9 @@ function readSingleFile(event) {
         complete: (results) => {
           const courses = [];
           for (const result of results.data) {
+            if (result[0] === "") {
+              continue;
+            }
             courses.push(
               new Object({
                 courseCode: result[0],
@@ -75,6 +81,9 @@ function readSingleFile(event) {
         complete: (results) => {
           const classrooms = [];
           for (const result of results.data) {
+            if (result[0] === "") {
+              continue;
+            }
             classrooms.push(
               new Object({
                 classId: result[0],
@@ -95,6 +104,9 @@ function readSingleFile(event) {
         complete: (results) => {
           const busyDays = [];
           for (const result of results.data) {
+            if (result[0] === "") {
+              continue;
+            }
             busyDays.push(
               new Object({
                 instructorName: result[0],
