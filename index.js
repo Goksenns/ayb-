@@ -42,7 +42,6 @@ function readSingleFile(event) {
           }
           localStorage.setItem("services", JSON.stringify(services));
           routeToCourses();
-          getUploadedItems();
         },
       });
       break;
@@ -70,7 +69,6 @@ function readSingleFile(event) {
           }
           localStorage.setItem("courses", JSON.stringify(courses));
           routeToCourses();
-          getUploadedItems();
         },
       });
 
@@ -94,7 +92,6 @@ function readSingleFile(event) {
           }
           localStorage.setItem("classrooms", JSON.stringify(classrooms));
           routeToCourses();
-          getUploadedItems();
         },
       });
       break;
@@ -117,12 +114,11 @@ function readSingleFile(event) {
           }
           localStorage.setItem("busyDays", JSON.stringify(busyDays));
           routeToCourses();
-          getUploadedItems();
         },
       });
       break;
     default:
-      alert("You should submit services.csv, courses.csv, classroom.csv, busy.csv");
+      alert("You should submit service.csv, courses.csv, classroom.csv, busy.csv");
   }
 }
 

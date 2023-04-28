@@ -23,7 +23,7 @@ const setServiceLessons = () => {
     if (!selectedClass) {
       dropLoadedFiles();
       alert(
-        "There is no way to make a schedule for the department. We are dropping your loaded files, so you can upload with more classes."
+        "There is no way to make a schedule for the department. We are dropping your loaded files, so you can upload with more classes or more capacity."
       );
       throw new Error("There is no way to make a schedule for the department.");
     }
@@ -113,6 +113,7 @@ function getOrderedLessons() {
       });
     }
   }
+  getClasses();
 }
 
 function dropLoadedFiles() {
@@ -134,7 +135,6 @@ window.addEventListener("click", (event) => {
     modal.setAttribute("display", "fixed");
     modal.classList.remove("card-table-none");
     modal.classList.add("card-table");
-    console.log(course);
     const table = document.getElementById("clicked-table");
     const html = `
       <button id="close-button" onclick="closeModal()">X</button>
@@ -186,4 +186,17 @@ window.addEventListener("click", (event) => {
 function closeModal() {
   const modal = document.getElementById("modal");
   modal.classList.add("card-table-none");
+}
+
+function getClasses() {
+  dayTimeArr.forEach((dayTime) => {
+    const dayTimeSelector = `${dayTime.toLowerCase()}-tr`;
+    classrooms.forEach((_class) => {
+      const classes = document.getElementById(dayTimeSelector);
+      const th = document.createElement("th");
+      th.setAttribute("id", "th-1");
+      th.textContent = _class.classId;
+      classes.appendChild(th);
+    });
+  });
 }
